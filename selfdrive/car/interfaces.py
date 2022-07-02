@@ -179,9 +179,8 @@ class CarInterfaceBase():
     if (self.disengage_on_gas and cs_out.gasPressed and (not self.CS.out.gasPressed) and cs_out.vEgo > gas_resume_speed) or \
        (cs_out.brakePressed and (not self.CS.out.brakePressed or not cs_out.standstill)):
       if self.CP.carFingerprint in HYUNDAI_LFA["use_lfa_button"]:
-        #Do not disable LFA when braking?
-        #if cs_out.lfaEnabled:
-        #  cs_out.disengageByBrake= True
+        if cs_out.lfaEnabled:
+          cs_out.disengageByBrake= True
         if cs_out.cruiseState.enabled:
           events.add(EventName.pedalPressed)
         else:
