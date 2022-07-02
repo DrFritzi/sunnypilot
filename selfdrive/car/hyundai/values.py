@@ -17,7 +17,7 @@ class CarControllerParams:
                              CAR.KIA_NIRO_HEV_2021]: #For Kia niro 2020 test
       self.STEER_MAX = 384
     else:
-      self.STEER_MAX = 384
+      self.STEER_MAX = 255
     self.STEER_DELTA_UP = 3
     self.STEER_DELTA_DOWN = 7
     self.STEER_DRIVER_ALLOWANCE = 50
